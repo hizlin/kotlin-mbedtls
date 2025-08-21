@@ -16,16 +16,16 @@ rm -rf ${BUILD_DIR}
 tar -xf mbedtls-lib/build/mbedtls.tar.gz -C mbedtls-lib/build/ --no-same-owner
 
 # Download framework for MbedTLS 3.6.0+
-echo "Downloading mbedtls-framework for MbedTLS ${MBEDTLS_VERSION}..."
-git clone --depth 1 https://github.com/Mbed-TLS/mbedtls-framework.git ${BUILD_DIR}/framework || true
+# echo "Downloading mbedtls-framework for MbedTLS ${MBEDTLS_VERSION}..."
+# git clone --depth 1 https://github.com/Mbed-TLS/mbedtls-framework.git ${BUILD_DIR}/framework || true
 
 # install python requirements
 python3 -m pip install -r ${BUILD_DIR}/scripts/basic.requirements.txt
 
 # Add framework to Python path if it exists (needed for MbedTLS 3.6.0+)
-if [ -d "${BUILD_DIR}/framework" ]; then
-    export PYTHONPATH="${BUILD_DIR}/framework:${PYTHONPATH:-}"
-fi
+# if [ -d "${BUILD_DIR}/framework" ]; then
+#     export PYTHONPATH="${BUILD_DIR}/framework:${PYTHONPATH:-}"
+# fi
 
 # configure
 chmod +x ${BUILD_DIR}/scripts/config.pl
