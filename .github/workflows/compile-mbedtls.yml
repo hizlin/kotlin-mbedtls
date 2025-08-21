@@ -6,7 +6,7 @@ on:
       - 'compileMbedtls.sh'
       - '.github/workflows/compile-mbedtls.yml'
       - '**/src/**/*.c'
-  workflow_call:
+  workflow_dispatch:
     inputs:
       mbedtlsVersion:
         type: string
