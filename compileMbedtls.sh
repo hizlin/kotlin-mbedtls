@@ -29,8 +29,8 @@ tar -xf mbedtls-lib/build/mbedtls.tar.gz -C mbedtls-lib/build/ --no-same-owner
 
 # configure
 chmod +x ${BUILD_DIR}/scripts/config.pl
-${BUILD_DIR}/scripts/config.pl -f "${BUILD_DIR}/include/mbedtls/mbedtls_config.h" unset MBEDTLS_SSL_MAX_FRAGMENT_LENGTH
-${BUILD_DIR}/scripts/config.pl -f "${BUILD_DIR}/include/mbedtls/mbedtls_config.h" set MBEDTLS_SSL_DTLS_CONNECTION_ID
+${BUILD_DIR}/scripts/config.pl -f "${BUILD_DIR}/include/mbedtls/config.h" unset MBEDTLS_SSL_MAX_FRAGMENT_LENGTH
+${BUILD_DIR}/scripts/config.pl -f "${BUILD_DIR}/include/mbedtls/config.h" set MBEDTLS_SSL_DTLS_CONNECTION_ID
 
 ## compile
 export SHARED=true
